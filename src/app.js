@@ -12,7 +12,7 @@ function App(props) {
   // };
   return (
     <div className="App">
-      <h1>Hello Counter</h1>
+      <h1>Hello App</h1>
 
       {props.counter}
       <br />
@@ -20,7 +20,10 @@ function App(props) {
       <button className="btn btn-success" onClick={() => props.increment()}>
         + 1
       </button>
-      <button className="btn btn-danger ml-2" onClick={() => props.decrement()}>
+      <button
+        className="btn btn-danger ml-2"
+        onClick={() => props.decrement(2)}
+      >
         - 2
       </button>
     </div>
@@ -34,7 +37,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     increment: () => dispatch(increment()),
-    decrement: () => dispatch(decrement())
+    decrement: val => dispatch(decrement(val))
   };
 };
 
